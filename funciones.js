@@ -16,13 +16,19 @@ const cargarContactos = (db, parentNode) => {
 
 const crearContacto = (parentNode, contacto, db) => {
     let divContacto = document.createElement('div')
-    let nombreContacto = document.createElement('h3')
-    let numeroContacto = document.createElement('p')
+    let documentoContacto = document.createElement('p')
+    let nombreContacto = document.createElement('p')
+    let apellidoContacto = document.createElement('p')
+    let telefonoContacto = document.createElement('p')
+    let ciudadContacto = document.createElement('p')
     let direccionContacto = document.createElement('p')
     let iconoBorrar = document.createElement('span')
 
+    documentoContacto.innerHTML = contacto.documento
     nombreContacto.innerHTML = contacto.nombre
-    numeroContacto.innerHTML = contacto.numero
+    apellidoContacto.innerHTML = contacto.apellido
+    telefonoContacto.innerHTML = contacto.telefono
+    ciudadContacto.innerHTML = contacto.ciudad
     direccionContacto.innerHTML = contacto.direccion
     iconoBorrar.innerHTML = ' delete_forever'
 
@@ -36,8 +42,11 @@ const crearContacto = (parentNode, contacto, db) => {
     }
 
 
+    divContacto.appendChild(documentoContacto)
     divContacto.appendChild(nombreContacto)
-    divContacto.appendChild(numeroContacto)
+    divContacto.appendChild(apellidoContacto)
+    divContacto.appendChild(telefonoContacto)
+    divContacto.appendChild(ciudadContacto)
     divContacto.appendChild(direccionContacto)
     divContacto.appendChild(iconoBorrar)
 
